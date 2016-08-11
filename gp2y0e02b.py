@@ -29,7 +29,7 @@ class GP2Y0E02B(object):
     def __init__(self, bus=1, addr=DEFAULT_DEVICE_ADDR):
         self._i2c = smbus.SMBus(bus)
         self._addr = addr
-        self._shift_bit = self.i2c.read_byte_data(addr, self.SHIFT_BIT_ADDR)
+        self._shift_bit = self._i2c.read_byte_data(addr, self.SHIFT_BIT_ADDR)
 
     @property
     def value(self):
